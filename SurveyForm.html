@@ -1,0 +1,222 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="survey-form">
+        <caption>Customer Survey Form</caption>
+        <table>
+            <tr>
+                <tr>
+                    <td>
+                        <label for="name">Name:</label>
+                    </td>
+                    <td>
+                        <label for="email">Email</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         <input type="text" id="name" required><br>
+                    </td>
+                    <td>
+                        <input type="email" id="email" required><br>
+                   </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="radio">Is this first You are using our products & service?</label>
+                    </td>
+                </tr>
+                 <tr>
+                     <td>
+                        <input type="radio" id="radio" required>Yes
+                        <input type="radio" id="radio" required>No
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="radio">Would you suggestion to your friends and colleague?</label>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <input type="radio" id="radio" required>Yes
+                        <input type="radio" id="radio" required>No
+                    </td>
+                </tr>
+                <tr>
+                     <td>
+                        <label for="text">Do you have suggestions to improve our service?</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="text" id="text" cols="40" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="submitForm()">SUBMIT</button>
+                    </td>
+                </tr>
+        </table>
+    </form>    
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Survey Form</title>
+    <style>
+        body {
+            background-color: #0074D9; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="radio"] {
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #0074D9; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        .caption{
+            color:white;
+            text-align:center;
+            font-size:50px;
+        }
+    </style>
+    <div class="caption">
+        <header>Customer Survey Form</header>
+    
+</head>
+<body>
+    <form id="survey-form">
+        <table>
+            <tr>
+                <tr>
+                    <td>
+                        <label for="name">Name</label>
+                    </td>
+                    <td>
+                        <label for="email">Email</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         <input type="text" id="name" required><br>
+                    </td>
+                    <td>
+                        <input type="email" id="email" required><br>
+                   </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="radio">Is this first You are using our products & service?</label>
+                    </td>
+                </tr>
+                 <tr>
+                     <td>
+                        <input type="radio" id="radio" required>Yes
+                        <input type="radio" id="radio" required>No
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="radio">Would you suggestion to your friends and colleague?</label>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <input type="radio" id="radio" required>Yes
+                        <input type="radio" id="radio" required>No
+                    </td>
+                </tr>
+                <tr>
+                     <td>
+                        <label for="text">Do you have suggestions to improve our service?</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="text" id="text" cols="40" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="submitForm()">SUBMIT</button>
+                    </td>
+                </tr>
+        </table>
+    </form>
+
+    <script>
+        function submitForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var isFirstTime = document.getElementById("radio1").checked ? "Yes" : "No";
+            var wouldRecommend = document.getElementById("radio3").checked ? "Yes" : "No";
+            var suggestions = document.getElementById("text").value;
+
+            var message = "Name: " + name + "\n";
+            message += "Email: " + email + "\n";
+            message += "Is this your first time using our products & service?: " + isFirstTime + "\n";
+            message += "Would you recommend us to your friends and colleagues?: " + wouldRecommend + "\n";
+            message += "Suggestions to improve our service:\n" + suggestions;
+
+            alert(message);
+            resetForm();
+        }
+
+        function resetForm() {
+            document.getElementById("survey-form").reset();
+        }
+    </script>
+</body>
+</html>
